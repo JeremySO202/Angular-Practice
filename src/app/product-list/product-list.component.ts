@@ -11,10 +11,10 @@ export class ProductListComponent {
   products = products;
 
   share() {
-    window.alert('The product has been Oswald !');
+    window.alert('Has compartido el producto!');
   }
   onNotify() {
-    window.alert('You will be notified when the product goes on sale');
+    window.alert('Seras notificado cuando el poducto salga a la venta!');
   }
 }
 
