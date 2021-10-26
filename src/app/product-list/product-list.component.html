@@ -1,18 +1,26 @@
 <h2>Productos</h2>
 
 <div *ngFor="let product of products">
-  <h3>
-    <a
-      [title]="product.name + ' details'"
-      [routerLink]="['/products', product.id]"
-    >
-      {{ product.name }}
-    </a>
-  </h3>
-
-  <p *ngIf="product.description">{{ product.description }}</p>
-  <p *ngIf="product.price">$ {{ product.price }}</p>
-  <button (click)="share()">Compartir</button>
-  <app-product-alerts [product]="product" (click)="onNotify()">
-  </app-product-alerts>
+  <div class="row" >
+    <h3>
+      <a style="color: white;"
+        [title]="product.name + ' details'"
+        [routerLink]="['/products', product.id]"
+      >
+        {{ product.name }}
+      </a>
+    </h3>  
+    <p style="color: white;" *ngIf="product.description">{{ product.description }}</p>
+    <p style="color: white;"*ngIf="product.price">$ {{ product.price }}</p>
+    <table style="width: 100%;">
+      <tr>
+        <th><button style="float: inline-end;" (click)="share()">Compartir</button></th>
+        <th><app-product-alerts [product]="product" (click)="onNotify()">
+        </app-product-alerts></th>
+      </tr>
+    </table>
+    
+    
+  </div>
+ 
 </div>
